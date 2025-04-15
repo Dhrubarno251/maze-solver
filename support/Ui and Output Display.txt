@@ -1,0 +1,49 @@
+void showIntro()
+{
+    clearScreen();
+    printf("===================================\n");
+    printf("         MAZE SOLVER GAME          \n");
+    printf("===================================\n");
+    printf("Controls:\n");
+    printf("W - Move Up\n");
+    printf("S - Move Down\n");
+    printf("A - Move Left\n");
+    printf("D - Move Right\n");
+    printf("Q - Quit Game\n");
+    printf("Press any key to start...\n");
+    getch();
+}
+
+void displayMaze(struct Maze *m, struct Player *p)
+{
+    clearScreen();
+
+    for (int i = 0; i < HEIGHT; i++)
+    {
+        for (int j = 0; j < WIDTH; j++)
+        {
+            if (i == p->y && j == p->x)
+            {
+                printf("P");
+            }
+            else
+            {
+                printf("%c", m->grid[i][j]);
+            }
+        }
+        printf("\n");
+    }
+
+    printf("Steps: %d\n", p->steps);
+    printf("Controls: W/A/S/D to move, Q to quit.\n");
+}
+
+void clearScreen()
+{
+    system("cls");
+}
+
+void delay(int milliseconds)
+{
+    Sleep(milliseconds);
+}

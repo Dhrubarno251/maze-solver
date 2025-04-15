@@ -1,0 +1,39 @@
+void gameLoop(struct Maze *m, struct Player *p)
+{
+    while (1)
+    {
+        displayMaze(m, p);
+
+        if (p->x == WIDTH - 1 && p->y == HEIGHT - 1)
+        {
+            printf("\nCongratulations! You reached the end in %d steps!\n", p->steps);
+            break;
+        }
+
+        char move = getch();
+        switch (move)
+        {
+            case 'w':
+            case 'W':
+                movePlayer(m, p, 0, -1);
+                break;
+            case 's':
+            case 'S':
+                movePlayer(m, p, 0, 1);
+                break;
+            case 'a':
+            case 'A':
+                movePlayer(m, p, -1, 0);
+                break;
+            case 'd':
+            case 'D':
+                movePlayer(m, p, 1, 0);
+                break;
+            case 'q':
+            case 'Q':
+                printf("\nGame Quit. See you next time!\n");
+                exit(0);
+        }
+    }
+}
+

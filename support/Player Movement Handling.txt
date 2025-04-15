@@ -1,0 +1,23 @@
+void placePlayer(struct Maze *m, struct Player *p)
+{
+    p->x = 0;
+    p->y = 0;
+    p->steps = 0;
+}
+
+void movePlayer(struct Maze *m, struct Player *p, int dx, int dy)
+{
+    int newX = p->x + dx;
+    int newY = p->y + dy;
+
+    if (newX >= 0 && newX < WIDTH && newY >= 0 && newY < HEIGHT)
+    {
+        char nextCell = m->grid[newY][newX];
+        if (nextCell == ' ' || nextCell == 'E')
+        {
+            p->x = newX;
+            p->y = newY;
+            p->steps++;
+        }
+    }
+}
