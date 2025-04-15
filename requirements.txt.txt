@@ -1,0 +1,20 @@
+
+# Requirements for Maze Solver Game (C Project)
+
+# This project is written in C, so it doesn't require Python packages.
+# However, here are the tools and libraries needed to compile and run it.
+
+# C Compiler (e.g., GCC)
+gcc
+
+# Windows-specific libraries (included in Windows OS)
+conio.h
+windows.h
+
+# For cross-platform support, these libraries may need to be replaced with:
+# ncurses (Linux)
+# stdlib.h and termios (for input handling on Unix-like systems)
+
+# Optional tools for enhancement (GUI, graphics, etc.)
+# SDL2
+# ncurses
